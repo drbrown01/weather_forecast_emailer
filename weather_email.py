@@ -1,20 +1,31 @@
-emails ={}
-try:
-    email_file = open('emails2.txt', 'r')
 
-    for line in email_file:
-        (email, name) = line.split(',')
-        emails[email] = name.strip()
-        
-except FileNotFoundError as err :
-    print(err)
+def git_emails():
+   emails ={}
+   try:
+        email_file = open('emails2.txt', 'r')
 
-print(emails)
+        for line in email_file:
+            (email, name) = line.split(',')
+            emails[email] = name.strip()
+return emails
 
-schedule_file = open('schedule.txt','r')
+def get_schedule():
 
-schedule = schedule_file.read()
+    try:
+        schedule_file = open('schedule.txt','r')
 
-print(schedule)
+        schedule = schedule_file.read()
+    except FileNotFoundError as err :
+        print(err)
+
+    return schedule
     
- 
+def main():
+    emails = get_emails()
+    print(emails)
+
+    schedule = get_schedule()
+    print(schedule)
+    
+     
+main()
