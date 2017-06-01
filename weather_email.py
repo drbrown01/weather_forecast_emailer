@@ -2,7 +2,7 @@
 def git_emails():
    emails ={}
    try:
-        email_file = open('emails2.txt', 'r')
+        email_file = open('email.txt', 'r')
 
         for line in email_file:
             (email, name) = line.split(',')
