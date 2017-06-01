@@ -4,7 +4,7 @@ try:
 
     for line in email_file:
         (email, name) = line.split(',')
-        emails[email] = name
+        emails[email] = name.strip()
         
 except FileNotFoundError as err :
     print(err)
